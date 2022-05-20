@@ -1,0 +1,66 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+
+class Book{
+	private:
+		int Book_ID;
+		char Book_Name;
+		char Author_Name;
+		int Category_ID;
+		char Book_Description;
+		float Price;
+
+	public:
+	void setBookDetails(int id,char *name,char *author,int cId,char *disc,float pri);
+	void getBookDetails();
+	void updateBookDetails();
+
+
+};
+
+void Book::setBookDetails(int id,char *name,char *author,int cId,char *disc,float pri)
+{
+	Book_ID = id;
+	strcpy(Book_Name,name);
+	strcpy(Author_Name,author);
+	Category_ID = cId;
+	strcpy(Book_Description,disc);
+	Price = pri;
+}
+
+void Book::getBookDetails()
+{
+	
+}
+
+void Book::updateBookDetails()
+{
+	
+}
+
+
+class Category:public Book
+{
+	private: 
+		int Category_ID;
+		char Category_Name;
+
+	public:
+		void setCategoryDetails(int id, char *name);
+		void getCategoryDetails();
+
+};
+
+
+void Category::setCategoryDetails(int id, string name)
+{
+	Category_ID = id;
+	strcpy(Category_Name,name;
+
+}
+
+void Category::getCategoryDetails()
+{
+	
+}
