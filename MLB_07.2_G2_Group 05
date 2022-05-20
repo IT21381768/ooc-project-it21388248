@@ -1,0 +1,12 @@
+int main()
+{
+
+  Registered_User r1;
+  r1.setUserDetails("001","abc56","2001.06.23",10500,0776542876);
+  r1.setUserDetails( "Ann", "annfernando@gmail.com");
+  r1.getUserDetails();
+  r1.setAdminDetails("00A1","774#e");
+
+  return 0;
+  
+}
