@@ -1,0 +1,53 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+class Order{
+	private:
+		char Order_ID[10];
+		int Order_Quantity;
+		int Order_Amount;
+		int Total_Amount;
+	public:
+		Order(char O_ID, int O_Qty, int O_Amt);
+		double calcPrice();
+		void displayBill();
+		void confirmOrder();
+};
+
+class Payment{
+	private:
+		char Pay_ID[10];
+		char Card_Name[20];
+		int Card_Number;
+	public:
+		Payment(char P_ID, char C_Name, int C_No);
+		void confirmPayment();
+};
+
+Order::Order(char O_ID, int O_Qty, int O_Amt){
+	strcpy(Order_ID, O_ID);
+	Order_Quantity = O_Qty;
+	Order_Amount = O_Amt;
+}
+
+double Order::calcPrice(){
+	Total_Amount = Order_Quantity * Order_Amount;
+}
+
+void Order::displayBill(){
+	cout<<"Total Amount is : "<<Total_Amount;
+}
+
+void Order::Confirm_Order(){
+
+}
+
+Payment::Payment(char P_ID, char C_Name, int C_No){
+	strcpy(Pay_ID, P_ID);
+	strcpy(Card_Name, C_Name);
+	Card_Number = C_No;
+}
+
+void Payment::confirmPayment(){
+}
