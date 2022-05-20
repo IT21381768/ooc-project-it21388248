@@ -1,4 +1,83 @@
-//my one
+#include<iostream>
+#include<cstring>
+using namespace std;
+
+class Unregistered_User{
+   protected:
+    char Name[20];
+    char Email_Address[20];
+
+public:
+
+void setUserDetails(char *UName,char *Email); 
+};
+
+void Unregistered_User::setUserDetails(char *UName,char *Email)
+{
+  strcpy(Name,UName);
+  strcpy(Email_Address,Email);
+}
+
+class Registered_User : public Unregistered_User
+
+{
+protected: 
+    char User_ID[10];
+    char password[8];
+    char DOB[10];
+    int ZIP_Code;
+    int Contact_Number;  
+
+public:
+   void setUserDetails(char *ID,char *pwd, char *bday ,int zip,int num);
+   void getUserDetails();
+      
+};
+
+void Registered_User::setUserDetails(char *ID,char *pwd, char *bday ,int zip,int num)
+{
+  strcpy(User_ID,ID);
+  strcpy(password,pwd);
+  strcpy(DOB,bday);
+  ZIP_Code=zip;
+  Contact_Number=num;
+  
+}
+void Registered_User::getUserDetails()
+{
+   cout<<"User ID : "<<User_ID<<endl;
+   cout<<"password : "<<password<<endl;
+   cout<<"DOB : "<<DOB<<endl;
+   cout<<" ZIP_Code : "<< ZIP_Code<<endl;
+   cout<<"Contact_Number : "<<Contact_Number<<endl;
+  
+}
+
+class Admin : public Unregistered_User
+{  
+protected:
+
+    char Admin_ID[10];
+    char Password[8];
+
+public:
+
+   void setAdminDetails(char *A_ID,char *A_pwd);
+   void getAdminDetails();
+   //void login();
+};
+
+void::Admin setAdminDetails(char *A_ID,char *A_pwd)
+{
+  strcpy(Admin_ID,A_ID);
+  strcpy( Password,A_pwd);
+}
+
+void :: Admin getAdminDetails()
+{
+  cout<<"Admin ID : "<<Admin_ID<<endl;
+  cout<<"Admin Ipassword : "<<password<<endl;
+}
 
 
 
