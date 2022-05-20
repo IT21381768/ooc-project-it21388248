@@ -64,8 +64,7 @@ public:
 
    void setAdminDetails(char *A_ID,char *A_pwd);
    void getAdminDetails();
-   //void login();
-};
+  };
 
 void::Admin setAdminDetails(char *A_ID,char *A_pwd)
 {
@@ -76,7 +75,7 @@ void::Admin setAdminDetails(char *A_ID,char *A_pwd)
 void :: Admin getAdminDetails()
 {
   cout<<"Admin ID : "<<Admin_ID<<endl;
-  cout<<"Admin Ipassword : "<<password<<endl;
+  cout<<"Admin Password : "<<password<<endl;
 }
 
 
