@@ -4,59 +4,67 @@ using namespace std;
 
 class Book{
 	private:
-		int Book_ID;
-		char Book_Name;
-		char Author_Name;
-		int Category_ID;
+		char Book_ID[];
+		char Book_Name[];
+		char Author_Name[];
+		char Category_ID[];
 		char Book_Description;
 		float Price;
 
 	public:
-	void setBookDetails(int id,char *name,char *author,int cId,char *disc,float pri);
-	void getBookDetails();
-	void updateBookDetails();
+		Book(char *id,char *name,char *author,char *cId,char *disc,float pri);
+		void getBookDetails();
+		void updateBookDetails(int id,char *name,char *author,char *cId,char *disc,float pri);
 
 
 };
 
-void Book::setBookDetails(int id,char *name,char *author,int cId,char *disc,float pri)
+Book::Book(int id,char *name,char *author,char *cId,char *disc,float pri)
 {
-	Book_ID = id;
+	strcpy(Book_ID,id);
 	strcpy(Book_Name,name);
 	strcpy(Author_Name,author);
-	Category_ID = cId;
+	strcpy(Category_ID,cId);
 	strcpy(Book_Description,disc);
 	Price = pri;
 }
 
 void Book::getBookDetails()
 {
-	
+	cout<<"Book Id : "<< Book_ID <<endl;
+	cout<<"Book Name : "<< Book_ID <<endl;
+	cout<<"Book Id : "<< Book_ID <<endl;
+	cout<<"Book Id : "<< Book_ID <<endl;
 }
 
-void Book::updateBookDetails()
+void Book::updateBookDetails(int id,char *name,char *author,char *cId,char *disc,float pri)
 {
-	
+	strcpy(Book_ID,id);
+	strcpy(Book_Name,name);
+	strcpy(Author_Name,author);
+	strcpy(Category_ID,cId);
+	strcpy(Book_Description,disc);
+	Price = pri;
 }
 
 
-class Category:public Book
+class Category
 {
 	private: 
-		int Category_ID;
+		char Category_ID;
 		char Category_Name;
 
 	public:
-		void setCategoryDetails(int id, char *name);
+		Category(char *id, char *name);
 		void getCategoryDetails();
 
 };
 
 
-void Category::setCategoryDetails(int id, string name)
+Category::Category(char *id, string name)
 {
-	Category_ID = id;
-	strcpy(Category_Name,name;
+	strcpy(Category_ID,id);
+	strcpy(Category_Name,name);
 
 }
 
